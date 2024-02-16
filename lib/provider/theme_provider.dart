@@ -15,6 +15,23 @@ class ThemeProvider extends ChangeNotifier {
 
   void toggleTheme() {
     _themeData = (_themeData == _lightTheme) ? _darkTheme : _lightTheme;
+    saveTheme();
     notifyListeners();
+  }
+
+  Future<void> saveTheme() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int themeType = (_themeData == _lightTheme) ? 1 : 0;
+    prefs.setInt('theme', themeType);
+  }
+
+  Future<void> loadTheme() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int? themeType = prefs.getInt('theme');
+    if (themeType == null) {
+      _themeData = _lightTheme;
+    } else {
+      _themeData = (themeType == 1) ? _lightTheme : _darkTheme;
+    }
   }
 }

@@ -3,9 +3,11 @@ import 'core/core.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   final CounterProvider counterProvider = CounterProvider();
+  final ThemeProvider themeProvider = ThemeProvider();
   counterProvider.getCountPreferences();
+  themeProvider.loadTheme();
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (context) => ThemeProvider()),
+    ChangeNotifierProvider.value(value: themeProvider),
     ChangeNotifierProvider.value(value: counterProvider),
   ], child: const MyApp()));
 }
