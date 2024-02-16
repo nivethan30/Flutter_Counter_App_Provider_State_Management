@@ -1,13 +1,9 @@
 import '../core/core.dart';
 
 class ThemeProvider extends ChangeNotifier {
-  late ThemeData _themeData;
+  late ThemeData _themeData = _lightTheme;
   final ThemeData _lightTheme = ThemeData.light();
   final ThemeData _darkTheme = ThemeData.dark();
-
-  ThemeProvider() {
-    _themeData = _lightTheme;
-  }
 
   ThemeData get themeData => _themeData;
   ThemeData get lightTheme => _lightTheme;
@@ -33,5 +29,6 @@ class ThemeProvider extends ChangeNotifier {
     } else {
       _themeData = (themeType == 1) ? _lightTheme : _darkTheme;
     }
+    notifyListeners();
   }
 }

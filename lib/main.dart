@@ -4,8 +4,8 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   final CounterProvider counterProvider = CounterProvider();
   final ThemeProvider themeProvider = ThemeProvider();
+    themeProvider.loadTheme();
   counterProvider.getCountPreferences();
-  themeProvider.loadTheme();
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider.value(value: themeProvider),
     ChangeNotifierProvider.value(value: counterProvider),
