@@ -1,16 +1,23 @@
 # counter_app
 
-A new Flutter project.
+A Simple Counter Application is built using the Flutter.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+- This is a Simple Counter Application built using Flutter.
+- Here I used some packages
+  - provider
+    - Provider is used to manage the state of the application.
+    - Here in this application i used provider to increase and decrease or reset the counter value. - And I used provider to switch themes between light mode and dark mode.
+  - google_fonts
+    - Google Fonts is used to use large variety of fonts available in google to make the application looks beautiful.
+    - In this application i used poppins type of google fonts.
+  - shared_preferences
+    - Shared Preferences is used to store and get the informations in the local device.
+    - Here i used shared_preferences to store the counter value to the local memory to reuse the value when the application restart.
+    - Here i used shared_preferences to store the themedata in the form of integer and store in the local device and load that value when the application restart. Based on the integer value the theme should be light mode or dark mode.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-Package Details: 
+    - provider - [open](https://pub.dev/packages/provider) .
+    - google_fonts - [open](https://pub.dev/packages/google_fonts) . 
+    - shared_preferences -[open](https://pub.dev/packages/shared_preferences) .
