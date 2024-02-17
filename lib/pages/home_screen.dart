@@ -10,8 +10,10 @@ class HomeScreen extends StatelessWidget {
       return SafeArea(
         child: Scaffold(
             appBar: AppBar(
-              title: const Text("Counter App"),
-              backgroundColor: Colors.deepPurple.shade200,
+              title: Text(
+                "Counter App",
+                style: GoogleFonts.poppins(),
+              ),
               elevation: 10,
               actions: [
                 IconButton(
