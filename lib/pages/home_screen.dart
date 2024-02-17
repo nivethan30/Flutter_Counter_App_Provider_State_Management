@@ -10,9 +10,9 @@ class HomeScreen extends StatelessWidget {
       return SafeArea(
         child: Scaffold(
             appBar: AppBar(
-              title: Text(
+              title: const Text(
                 "Counter App",
-                style: GoogleFonts.poppins(),
+                style: TextStyle(fontFamily: 'Poppins'),
               ),
               elevation: 10,
               actions: [
@@ -35,7 +35,10 @@ class HomeScreen extends StatelessWidget {
             body: Center(
               child: Text(
                 "Count Value : ${counterProvider.count}",
-                style: GoogleFonts.poppins(fontSize: 20),
+                style: const TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
               ),
             ),
             floatingActionButton: Padding(

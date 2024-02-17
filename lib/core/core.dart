@@ -11,4 +11,3 @@ export '../provider/theme_provider.dart';
 //packages
 export 'package:provider/provider.dart';
 export 'package:shared_preferences/shared_preferences.dart';
-export 'package:google_fonts/google_fonts.dart';
