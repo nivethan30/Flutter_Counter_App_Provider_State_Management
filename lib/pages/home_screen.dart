@@ -17,6 +17,7 @@ class HomeScreen extends StatelessWidget {
               elevation: 10,
               actions: [
                 IconButton(
+                    tooltip: "Toggle theme",
                     onPressed: () {
                       themeProvider.toggleTheme();
                     },
@@ -43,6 +44,7 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   floatingActionButtons(
+                    tooltip: "Decrease Count",
                     iconData: Icons.remove,
                     onPressed: counterProvider.count == 0
                         ? null
@@ -52,6 +54,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(width: 10),
                   floatingActionButtons(
+                      tooltip: "Reset Count",
                       iconData: Icons.refresh,
                       onPressed: counterProvider.count == 0
                           ? null
@@ -60,6 +63,7 @@ class HomeScreen extends StatelessWidget {
                             }),
                   const SizedBox(width: 10),
                   floatingActionButtons(
+                      tooltip: "Increase Count",
                       iconData: Icons.add,
                       onPressed: () {
                         counterProvider.increamentCounter();
@@ -74,11 +78,14 @@ class HomeScreen extends StatelessWidget {
   }
 
   SizedBox floatingActionButtons(
-      {required IconData iconData, required VoidCallback? onPressed}) {
+      {required IconData iconData,
+      required VoidCallback? onPressed,
+      required String tooltip}) {
     return SizedBox(
       height: 70,
       width: 70,
       child: FloatingActionButton(
+        tooltip: tooltip,
         onPressed: onPressed,
         child: Icon(iconData),
       ),
